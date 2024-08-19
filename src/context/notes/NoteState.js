@@ -2,8 +2,10 @@ import NoteContext from "./noteContext";
 import React, { useState } from 'react'
 
 const NoteState = (props) => {
-  const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
-  const host = `http://localhost:${pport}`;
+  // const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
+  const pport= 5001;
+  // const host = `http://localhost:${pport}`;
+  const host = `https://inotebook-backend-3rdo.onrender.com`;
   const notesInitial = []
 
   const [notes, setnotes] = useState(notesInitial);

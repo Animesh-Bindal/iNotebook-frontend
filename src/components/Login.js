@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom'
 
 function Login(props) {
     const [credentials, setCredentials] = useState({ email: "", password: "", showPassword: false });
-    const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
+    // const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
+    const pport = 5001;
     const [errors, setErrors] = useState({});
     let history = useNavigate();
+    const host = `https://inotebook-backend-3rdo.onrender.com`;
 
     const onchange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -18,10 +20,10 @@ function Login(props) {
             showPassword: !credentials.showPassword,
         });
     }
-
+    // `http://localhost:${pport}/api/auth/login`
     const handleClick = async () => {
         // const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
-        const response = await fetch(`http://localhost:${pport}/api/auth/login`, {
+        const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +62,7 @@ function Login(props) {
                 <p><b>Your notes on cloud ☁️</b></p>
             </div>
 
-            <div className="container form" style={{width: '35vw'}}>
+            <div className="container form" style={{ width: '35vw' }}>
                 <p className="text-center"><i>Login to continue using iNotebook 😊 </i></p>
                 <div className="mb-4 input-container">
                     <label htmlFor="email" className="form-label">Email address</label>

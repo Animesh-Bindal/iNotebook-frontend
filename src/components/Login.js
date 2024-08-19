@@ -62,7 +62,7 @@ function Login(props) {
                 <p><b>Your notes on cloud ☁️</b></p>
             </div>
 
-            <div className="container form" style={{ width: '35vw' }}>
+            <div className="container form" style={{ width: '60vw' }}>
                 <p className="text-center"><i>Login to continue using iNotebook 😊 </i></p>
                 <div className="mb-4 input-container">
                     <label htmlFor="email" className="form-label">Email address</label>

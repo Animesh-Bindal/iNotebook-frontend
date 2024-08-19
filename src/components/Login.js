@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Login(props) {
     const [credentials, setCredentials] = useState({ email: "", password: "", showPassword: false });
+    const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
     const [errors, setErrors] = useState({});
     let history = useNavigate();
 
@@ -19,7 +20,8 @@ function Login(props) {
     }
 
     const handleClick = async () => {
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        // const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
+        const response = await fetch(`http://localhost:${pport}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

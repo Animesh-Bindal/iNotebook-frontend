@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function SignUp(props) {
-
+    const pport= process.env.REACT_APP_BACKEND_PORTT; //USING PORT OF ENV VARIABLE
     const [credentials, setCredentials] = useState({ email: "", name: "", password: "", cpassword: "", showPassword: false, showConfirmPassword: false })
     const [errors, setErrors] = useState({});
     let history = useNavigate();
@@ -29,8 +29,7 @@ function SignUp(props) {
 
     const handleClick = async (e) => {
         const { email, name, password, cpassword } = credentials;
-
-        const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        const response = await fetch(`http://localhost:${pport}/api/auth/createuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

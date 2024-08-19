@@ -18,9 +18,7 @@ function NoteItems(props) {
     return (
         <div className='col-md-4 my-2' >
             <div className="card " >
-
                 <div className="card-body">
-
                     <div className='d-flex align-items-center justify-content-between'>
                         <h5 className="card-title">{note.title} </h5>
                         <p>
